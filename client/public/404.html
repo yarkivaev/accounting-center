@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>УЦ Свободный Сокол</title>
+    <script>
+      // GitHub Pages SPA redirect script
+      // Capture the current path and redirect to index.html with the path as a query parameter
+      (function () {
+        var pathSegmentsToKeep = 1; // accounting-center
+
+        var l = window.location;
+        var segments = l.pathname.split("/").filter(Boolean);
+
+        // Keep only the base path (accounting-center) and the actual route
+        if (segments.length > pathSegmentsToKeep) {
+          var route = "/" + segments.slice(pathSegmentsToKeep).join("/");
+
+          l.replace(
+            l.protocol +
+              "//" +
+              l.host +
+              "/" +
+              segments.slice(0, pathSegmentsToKeep).join("/") +
+              "/?p=" +
+              encodeURIComponent(route) +
+              (l.search ? "&q=" + encodeURIComponent(l.search.slice(1)) : "") +
+              l.hash
+          );
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
