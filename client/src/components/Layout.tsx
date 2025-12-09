@@ -28,11 +28,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="flex gap-6">
             <span className="flex items-center gap-2">
               <MapPin className="h-3 w-3" />
-              г. Липецк, пл. Заводская, д. 1
+              г. Липецк, Заводская пл., 1
             </span>
             <span className="flex items-center gap-2">
               <Mail className="h-3 w-3" />
-              info@svobodny-sokol.ru
+              poshevalova_la@svsokol.ru
             </span>
           </div>
           <span>ПН-ПТ: 8:00 - 17:00</span>
@@ -76,11 +76,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="tel:+74742000000"
+              href="tel:+79205292360"
               className="flex items-center gap-2 text-sm font-bold hover:text-primary"
             >
               <Phone className="h-4 w-4" />
-              +7 (4742) 00-00-00
+              +7 920 529-23-60
             </a>
           </div>
 
@@ -113,11 +113,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </Link>
             ))}
             <a
-              href="tel:+74742000000"
+              href="tel:+79205292360"
               className="flex items-center gap-3 font-bold mt-4"
             >
               <Phone className="h-5 w-5" />
-              +7 (4742) 00-00-00
+              +7 920 529-23-60
             </a>
           </nav>
         </div>
@@ -227,21 +227,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <ul className="space-y-4 text-sm text-sidebar-foreground/70">
                 <li className="flex items-start gap-3">
                   <MapPin className="h-5 w-5 text-primary shrink-0" />
-                  <span>г. Липецк, пл. Заводская, д. 1</span>
+                  <span>г. Липецк, Заводская пл., 1</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-primary shrink-0" />
-                  <a href="tel:+74742000000" className="hover:text-white">
-                    +7 (4742) 00-00-00
+                  <a href="tel:+79205292360" className="hover:text-white">
+                    +7 920 529-23-60
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-primary shrink-0" />
                   <a
-                    href="mailto:info@svobodny-sokol.ru"
+                    href="mailto:poshevalova_la@svsokol.ru"
                     className="hover:text-white"
                   >
-                    info@svobodny-sokol.ru
+                    poshevalova_la@svsokol.ru
                   </a>
                 </li>
               </ul>

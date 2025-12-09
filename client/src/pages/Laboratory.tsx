@@ -16,6 +16,12 @@ import {
 import { Link } from "wouter";
 
 export default function Laboratory() {
+  const equipment = [
+    { src: "equipment-1.jpg", title: "Спектрометр" },
+    { src: "equipment-2.png", title: "Химическая лаборатория" },
+    { src: "equipment-3.jpg", title: "Лабораторное оборудование" },
+  ];
+
   const labGroups = [
     {
       id: "analytical",
@@ -35,10 +41,10 @@ export default function Laboratory() {
       icon: Droplets,
       cert: "organic_1.jpg",
       items: [
-        "Нефтяные масла (вязкость, плотность, кислотное число)",
-        "Дизельное топливо (вода, примеси, температура вспышки)",
-        "Бензин (плотность, вода, примеси)",
-        "СОЖ (полный анализ показателей)",
+        "Нефтяные масла (вязкость, плотность, кислотное число, механические примеси, температура вспышки)",
+        "Дизельное топливо (вода, механические примеси, температуры вспышки, вязкость, плотность)",
+        "Бензин (плотность, вода и механические примеси)",
+        "СОЖ (вязкость, плотность, вода, механические примеси)",
       ],
     },
     {
@@ -139,7 +145,7 @@ export default function Laboratory() {
         <div className="container">
           <Tabs defaultValue="services" className="w-full">
             <div className="flex justify-center mb-12">
-              <TabsList className="grid w-full max-w-md grid-cols-2 h-14 bg-secondary/50 p-1 rounded-none">
+              <TabsList className="grid w-full max-w-2xl grid-cols-3 h-14 bg-secondary/50 p-1 rounded-none">
                 <TabsTrigger
                   value="services"
                   className="h-full text-base font-bold uppercase tracking-wide data-[state=active]:bg-primary data-[state=active]:text-white rounded-none transition-all"
@@ -151,6 +157,12 @@ export default function Laboratory() {
                   className="h-full text-base font-bold uppercase tracking-wide data-[state=active]:bg-primary data-[state=active]:text-white rounded-none transition-all"
                 >
                   Сертификаты
+                </TabsTrigger>
+                <TabsTrigger
+                  value="equipment"
+                  className="h-full text-base font-bold uppercase tracking-wide data-[state=active]:bg-primary data-[state=active]:text-white rounded-none transition-all"
+                >
+                  Оборудование
                 </TabsTrigger>
               </TabsList>
             </div>
@@ -196,7 +208,7 @@ export default function Laboratory() {
                             className="w-full justify-start p-0 h-auto text-primary hover:text-primary/80 hover:bg-transparent font-medium text-sm group/link"
                           >
                             <FileCheck className="h-4 w-4 mr-2" />
-                            Посмотреть область аккредитации
+                            Посмотреть область аттестации
                           </Button>
                         </DialogTrigger>
                         <DialogContent className="max-w-4xl p-0 overflow-hidden bg-transparent border-none shadow-none">
@@ -248,6 +260,48 @@ export default function Laboratory() {
                             src={`${import.meta.env.BASE_URL}certificates/${group.cert}`}
                             alt={`Сертификат - ${group.title}`}
                             className="w-full h-auto"
+                          />
+                        </div>
+                      </DialogContent>
+                    </Dialog>
+                  </div>
+                ))}
+              </div>
+            </TabsContent>
+
+            <TabsContent
+              value="equipment"
+              className="mt-0 animate-in fade-in slide-in-from-bottom-4 duration-500"
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {equipment.map((item, i) => (
+                  <div key={i} className="group cursor-pointer">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <div className="relative aspect-[4/3] bg-white border border-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                          <img
+                            src={`${import.meta.env.BASE_URL}images/${item.src}`}
+                            alt={item.title}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                          <div className="absolute inset-0 bg-sidebar/0 group-hover:bg-sidebar/20 transition-colors duration-300 flex items-center justify-center">
+                            <div className="bg-white/90 p-3 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                              <ZoomIn className="h-6 w-6 text-primary" />
+                            </div>
+                          </div>
+                          <div className="absolute bottom-0 left-0 right-0 bg-white/95 p-4 border-t border-border">
+                            <p className="text-sm font-bold text-sidebar line-clamp-2">
+                              {item.title}
+                            </p>
+                          </div>
+                        </div>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-4xl p-0 overflow-hidden bg-transparent border-none shadow-none">
+                        <div className="relative w-full h-[80vh] bg-white rounded-lg overflow-auto p-4 flex items-center justify-center">
+                          <img
+                            src={`${import.meta.env.BASE_URL}images/${item.src}`}
+                            alt={item.title}
+                            className="max-w-full max-h-full object-contain"
                           />
                         </div>
                       </DialogContent>

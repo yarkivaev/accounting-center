@@ -30,15 +30,31 @@ export default function Contacts() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 text-primary font-bold uppercase tracking-wider text-sm">
                     <MapPin className="h-5 w-5" />
-                    Адрес
+                    Почтовый адрес
                   </div>
                   <p className="text-lg text-sidebar font-medium">
                     398007, г. Липецк,
                     <br />
-                    пл. Заводская, д. 1
+                    Заводская пл., 1
                   </p>
                 </div>
 
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 text-primary font-bold uppercase tracking-wider text-sm">
+                    <MapPin className="h-5 w-5" />
+                    Юридический адрес
+                  </div>
+                  <p className="text-lg text-sidebar font-medium">
+                    127495, г. Москва,
+                    <br />
+                    Дмитровское ш., д. 163а к. 2,
+                    <br />
+                    помещ. 18.3
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 text-primary font-bold uppercase tracking-wider text-sm">
                     <Clock className="h-5 w-5" />
@@ -54,45 +70,22 @@ export default function Contacts() {
 
               <div className="space-y-6">
                 <h3 className="text-xl font-bold text-sidebar border-b border-border pb-4">
-                  Телефоны и E-mail
+                  Телефон и E-mail
                 </h3>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="space-y-2">
-                    <span className="text-xs font-bold uppercase text-muted-foreground">
-                      Бухгалтерия
-                    </span>
-                    <a
-                      href="tel:+74742000000"
-                      className="block text-lg font-bold text-sidebar hover:text-primary transition-colors"
-                    >
-                      +7 (4742) 00-00-00
-                    </a>
-                    <a
-                      href="mailto:buh@svobodny-sokol.ru"
-                      className="block text-base text-primary hover:underline"
-                    >
-                      buh@svobodny-sokol.ru
-                    </a>
-                  </div>
-
-                  <div className="space-y-2">
-                    <span className="text-xs font-bold uppercase text-muted-foreground">
-                      Лаборатория
-                    </span>
-                    <a
-                      href="tel:+74742000001"
-                      className="block text-lg font-bold text-sidebar hover:text-primary transition-colors"
-                    >
-                      +7 (4742) 00-00-01
-                    </a>
-                    <a
-                      href="mailto:lab@svobodny-sokol.ru"
-                      className="block text-base text-primary hover:underline"
-                    >
-                      lab@svobodny-sokol.ru
-                    </a>
-                  </div>
+                <div className="space-y-2">
+                  <a
+                    href="tel:+79205292360"
+                    className="block text-lg font-bold text-sidebar hover:text-primary transition-colors"
+                  >
+                    +7 920 529-23-60
+                  </a>
+                  <a
+                    href="mailto:poshevalova_la@svsokol.ru"
+                    className="block text-base text-primary hover:underline"
+                  >
+                    poshevalova_la@svsokol.ru
+                  </a>
                 </div>
               </div>
 
@@ -130,13 +123,13 @@ export default function Contacts() {
                     Реквизиты
                   </p>
                   <p className="text-sm">
-                    ООО «Учетный Центр Свободный Сокол»
+                    ООО «Учетный центр «Свободный сокол»
                     <br />
-                    ИНН: 4825000000
+                    ИНН: 7719733183
                     <br />
-                    КПП: 482501001
+                    КПП: 771501001
                     <br />
-                    ОГРН: 1024800000000
+                    ОГРН: 1097746629232
                   </p>
                 </div>
               </div>
