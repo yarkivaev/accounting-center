@@ -12,8 +12,12 @@ import {
   Search,
   ZoomIn,
 } from "lucide-react";
+import { useSearch } from "wouter";
 
 export default function Laboratory() {
+  const search = useSearch();
+  const params = new URLSearchParams(search);
+  const tab = params.get("tab");
   const equipment = [
     { src: "equipment-1.jpg", title: "Спектрометр" },
     { src: "equipment-2.png", title: "Химическая лаборатория" },
@@ -201,6 +205,7 @@ export default function Laboratory() {
       ctaButtonText="Связаться с лабораторией"
       services={labGroups}
       tabs={tabs}
+      defaultTab={tab || undefined}
       ctaTitle="Необходимы лабораторные испытания?"
       ctaDescription="Свяжитесь с нами для обсуждения программы испытаний и получения коммерческого предложения."
       ctaButtonLabel="Перейти к контактам"

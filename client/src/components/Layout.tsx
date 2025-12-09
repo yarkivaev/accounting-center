@@ -57,7 +57,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map(link => (
               <Link
                 key={link.href}
@@ -74,7 +74,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4">
             <a
               href="tel:+79205292360"
               className="flex items-center gap-2 text-sm font-bold hover:text-primary"
@@ -86,7 +86,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden p-2"
+            className="lg:hidden p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X /> : <Menu />}
@@ -215,6 +215,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <li>
                   <Link href="/laboratory" className="hover:text-white">
                     Неразрушающий контроль
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/legal" className="hover:text-white">
+                    Корпоративное право
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/legal" className="hover:text-white">
+                    Судебное представительство
                   </Link>
                 </li>
               </ul>

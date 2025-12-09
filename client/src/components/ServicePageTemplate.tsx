@@ -41,6 +41,7 @@ export interface ServicePageTemplateProps {
   ctaButtonText: string;
   services: ServiceGroup[];
   tabs?: ServiceTab[];
+  defaultTab?: string;
   ctaTitle: string;
   ctaDescription: string;
   ctaButtonLabel: string;
@@ -53,9 +54,9 @@ export interface ServicePageTemplateProps {
 function ServiceCard({ service }: { service: ServiceGroup }) {
   const Icon = service.icon;
   return (
-    <Card className="border border-border shadow-sm hover:shadow-lg transition-all duration-300 rounded-none group h-full flex flex-col">
+    <Card className="border border-border shadow-sm rounded-none h-full flex flex-col">
       <CardContent className="p-8 space-y-6 flex-1">
-        <div className="h-14 w-14 bg-secondary flex items-center justify-center rounded-none group-hover:bg-primary group-hover:text-white transition-colors">
+        <div className="h-14 w-14 bg-secondary flex items-center justify-center rounded-none">
           <Icon className="h-7 w-7" />
         </div>
         <h3 className="text-xl font-bold text-sidebar">{service.title}</h3>
@@ -125,6 +126,7 @@ export default function ServicePageTemplate({
   ctaButtonText,
   services,
   tabs,
+  defaultTab,
   ctaTitle,
   ctaDescription,
   ctaButtonLabel,
@@ -173,7 +175,7 @@ export default function ServicePageTemplate({
       <section className="py-12 bg-background">
         <div className="container">
           {tabs && tabs.length > 0 ? (
-            <Tabs defaultValue={tabs[0].id} className="w-full">
+            <Tabs defaultValue={defaultTab || tabs[0].id} className="w-full">
               <div className="flex justify-center mb-12">
                 <TabsList
                   className={`grid w-full max-w-2xl h-14 bg-secondary/50 p-1 rounded-none`}

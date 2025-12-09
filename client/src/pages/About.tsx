@@ -1,8 +1,16 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { Award, Building, History, Users } from "lucide-react";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Building, ZoomIn } from "lucide-react";
+import { Link } from "wouter";
 
 export default function About() {
+  const certificates = [
+    { src: "chemistry_1.jpg", title: "Аналитическая химия" },
+    { src: "organic_1.jpg", title: "Органическая химия" },
+    { src: "mechanical_1.jpg", title: "Механические испытания" },
+  ];
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -13,17 +21,17 @@ export default function About() {
             alt="О центре"
             className="w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-sidebar via-sidebar/90 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-sidebar via-sidebar/80 to-transparent" />
         </div>
 
         <div className="container relative z-10">
           <div className="max-w-3xl space-y-6 animate-in slide-in-from-left-10 fade-in duration-700">
-            <div className="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-sm">
+            <div className="inline-flex items-center gap-2 text-primary-foreground font-bold uppercase tracking-widest text-sm">
               <Building className="h-4 w-4" />О компании
             </div>
             <h1
               className="text-5xl md:text-6xl font-bold leading-tight"
-              style={{ color: "#f0f2f5" }}
+              style={{ color: "#ffffff" }}
             >
               УЦ Свободный Сокол
             </h1>
@@ -94,46 +102,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team Placeholder */}
-      <section className="py-24 bg-secondary/30 border-y border-border">
-        <div className="container">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-sidebar mb-4">
-              Наши Руководители
-            </h2>
-            <p className="text-muted-foreground">
-              Квалифицированные специалисты, готовые решить любую задачу
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[1, 2, 3, 4].map(i => (
-              <div
-                key={i}
-                className="group bg-white border border-border p-6 text-center hover:shadow-lg transition-all duration-300"
-              >
-                <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-6 overflow-hidden grayscale group-hover:grayscale-0 transition-all">
-                  {/* Placeholder for team photo */}
-                  <div className="w-full h-full flex items-center justify-center text-gray-400">
-                    <Users className="h-12 w-12" />
-                  </div>
-                </div>
-                <h3 className="text-lg font-bold text-sidebar">
-                  Сотрудник {i}
-                </h3>
-                <p className="text-sm text-primary font-medium mb-2">
-                  Должность
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  Краткое описание опыта и компетенций специалиста.
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Certificates Placeholder */}
+      {/* Certificates Section */}
       <section className="py-24 bg-background">
         <div className="container">
           <div className="flex flex-col md:flex-row gap-12 items-center">
@@ -143,27 +112,50 @@ export default function About() {
               </h2>
               <p className="text-muted-foreground">
                 Наша деятельность полностью лицензирована и соответствует всем
-                государственным стандартам. Лаборатория аккредитована в
+                государственным стандартам. Лаборатория аттестована в
                 национальной системе.
               </p>
-              <Button
-                variant="outline"
-                className="rounded-none border-sidebar text-sidebar hover:bg-sidebar hover:text-white uppercase font-bold tracking-wide"
-              >
-                Показать все документы
-              </Button>
+              <Link href="/laboratory?tab=certificates">
+                <Button
+                  variant="outline"
+                  className="rounded-none border-sidebar text-sidebar hover:bg-sidebar hover:text-white uppercase font-bold tracking-wide"
+                >
+                  Показать все документы
+                </Button>
+              </Link>
             </div>
             <div className="md:w-2/3 grid grid-cols-2 md:grid-cols-3 gap-6">
-              {[1, 2, 3].map(i => (
-                <div
-                  key={i}
-                  className="aspect-[3/4] bg-white border border-border p-4 shadow-sm flex flex-col items-center justify-center text-center group hover:border-primary transition-colors cursor-pointer"
-                >
-                  <Award className="h-16 w-16 text-gray-300 mb-4 group-hover:text-primary transition-colors" />
-                  <span className="text-xs font-bold uppercase text-gray-400 group-hover:text-sidebar transition-colors">
-                    Сертификат {i}
-                  </span>
-                </div>
+              {certificates.map((cert, i) => (
+                <Dialog key={i}>
+                  <DialogTrigger asChild>
+                    <div className="relative aspect-[1/1.414] bg-white border border-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group">
+                      <img
+                        src={`${import.meta.env.BASE_URL}certificates/${cert.src}`}
+                        alt={`Сертификат - ${cert.title}`}
+                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-sidebar/0 group-hover:bg-sidebar/20 transition-colors duration-300 flex items-center justify-center">
+                        <div className="bg-white/90 p-3 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                          <ZoomIn className="h-6 w-6 text-primary" />
+                        </div>
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 bg-white/95 p-3 border-t border-border">
+                        <p className="text-xs font-bold text-sidebar line-clamp-2">
+                          {cert.title}
+                        </p>
+                      </div>
+                    </div>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-4xl p-0 overflow-hidden bg-transparent border-none shadow-none">
+                    <div className="relative w-full h-[80vh] bg-white rounded-lg overflow-auto p-4">
+                      <img
+                        src={`${import.meta.env.BASE_URL}certificates/${cert.src}`}
+                        alt={`Сертификат - ${cert.title}`}
+                        className="w-full h-auto"
+                      />
+                    </div>
+                  </DialogContent>
+                </Dialog>
               ))}
             </div>
           </div>

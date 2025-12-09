@@ -64,6 +64,15 @@ export default function Home() {
                   Услуги лаборатории
                 </Button>
               </Link>
+              <Link href="/legal">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="rounded-none h-14 px-8 text-base font-bold uppercase tracking-wide text-white border-white/30 hover:bg-white hover:text-sidebar-primary backdrop-blur-sm"
+                >
+                  Юридические услуги
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -77,7 +86,7 @@ export default function Home() {
       {/* Main Directions Section */}
       <section className="py-24 bg-background relative z-20 -mt-20">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Accounting Card */}
             <Link href="/accounting" className="group">
               <Card className="h-full overflow-hidden border-0 shadow-2xl bg-white rounded-none transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
@@ -95,12 +104,11 @@ export default function Home() {
                 <CardContent className="p-10 space-y-6">
                   <div className="space-y-2">
                     <h3 className="text-3xl font-bold text-sidebar group-hover:text-primary transition-colors">
-                      Бухгалтерские и юридические услуги
+                      Бухгалтерские услуги
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">
                       Полное сопровождение ИП и ООО. Регистрация бизнеса,
-                      налоговая отчётность, кадровый учёт и юридическая
-                      поддержка.
+                      налоговая отчётность, кадровый учёт.
                     </p>
                   </div>
                   <div className="flex items-center gap-2 text-primary font-bold uppercase tracking-wide text-sm group-hover:gap-4 transition-all">
@@ -135,6 +143,37 @@ export default function Home() {
                     </p>
                   </div>
                   <div className="flex items-center gap-2 text-primary-foreground font-bold uppercase tracking-wide text-sm group-hover:gap-4 transition-all">
+                    Подробнее <ArrowRight className="h-4 w-4" />
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* Legal Card */}
+            <Link href="/legal" className="group">
+              <Card className="h-full overflow-hidden border-0 shadow-2xl bg-white rounded-none transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
+                <div className="relative h-64 overflow-hidden">
+                  <div className="absolute inset-0 bg-sidebar/10 group-hover:bg-transparent transition-colors z-10" />
+                  <img
+                    src={`${import.meta.env.BASE_URL}images/accounting-card.jpg`}
+                    alt="Юридические услуги"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute top-6 left-6 z-20 bg-white/90 backdrop-blur px-4 py-2 text-xs font-bold uppercase tracking-widest text-sidebar">
+                    Направление 03
+                  </div>
+                </div>
+                <CardContent className="p-10 space-y-6">
+                  <div className="space-y-2">
+                    <h3 className="text-3xl font-bold text-sidebar group-hover:text-primary transition-colors">
+                      Юридические услуги
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Корпоративное право, договорная работа, судебное
+                      представительство, сопровождение сделок.
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2 text-primary font-bold uppercase tracking-wide text-sm group-hover:gap-4 transition-all">
                     Подробнее <ArrowRight className="h-4 w-4" />
                   </div>
                 </CardContent>
@@ -309,12 +348,12 @@ export default function Home() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-sidebar p-8 hover:bg-white/5 transition-colors group border border-transparent hover:border-white/10"
+                className="bg-sidebar p-8 border border-transparent"
               >
-                <div className="text-primary-foreground/20 text-4xl font-mono font-bold mb-4 group-hover:text-primary transition-colors">
+                <div className="text-primary-foreground/20 text-4xl font-mono font-bold mb-4">
                   0{i + 1}
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-primary-foreground transition-colors">
+                <h3 className="text-xl font-bold mb-3 text-white">
                   {item.title}
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
