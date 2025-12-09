@@ -4,6 +4,8 @@ import path from "path";
 import { defineConfig } from "vite";
 import prerender from "@prerenderer/rollup-plugin";
 
+const baseUrl = "https://yarkivaev.github.io/accounting-center";
+
 const pageMeta: Record<string, { title: string; description: string }> = {
   "/": {
     title: "УЦ Свободный Сокол — Бухгалтерия, Лаборатория, Юридические услуги в Липецке",
@@ -47,6 +49,10 @@ export default defineConfig({
       postProcess(renderedRoute) {
         let html = renderedRoute.html.replace(/http:\/\/localhost:\d+/g, "");
         const meta = pageMeta[renderedRoute.route];
+        const pageUrl =
+          renderedRoute.route === "/"
+            ? `${baseUrl}/`
+            : `${baseUrl}${renderedRoute.route}`;
         if (meta) {
           html = html.replace(
             /<title>[^<]*<\/title>/,
@@ -55,6 +61,14 @@ export default defineConfig({
           html = html.replace(
             /<meta name="description" content="[^"]*">/,
             `<meta name="description" content="${meta.description}">`
+          );
+          html = html.replace(
+            /<meta property="og:url" content="[^"]*">/,
+            `<meta property="og:url" content="${pageUrl}">`
+          );
+          html = html.replace(
+            /<link rel="canonical" href="[^"]*">/,
+            `<link rel="canonical" href="${pageUrl}">`
           );
         }
         renderedRoute.html = html;
