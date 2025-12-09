@@ -9,6 +9,7 @@ import {
   Briefcase,
   Building2,
 } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 export default function Legal() {
   const services: ServiceGroup[] = [
@@ -81,22 +82,28 @@ export default function Legal() {
   ];
 
   return (
-    <ServicePageTemplate
-      directionNumber="03"
-      directionIcon={Scale}
-      title={
-        <>
-          Юридические услуги <br />
-          для бизнеса
-        </>
-      }
-      description="Оказываем весь спектр юридических услуг: от регистрации компании и договорной работы до представительства в судах и сопровождения сложных сделок."
-      heroImage={`${import.meta.env.BASE_URL}images/accounting-card.jpg`}
-      ctaButtonText="Связаться с юристом"
-      services={services}
-      ctaTitle="Нужна юридическая помощь?"
-      ctaDescription="Запишитесь на консультацию к нашим экспертам. Мы проанализируем вашу ситуацию и предложим оптимальное решение."
-      ctaButtonLabel="Получить консультацию"
-    />
+    <>
+      <Helmet>
+        <title>Юридические услуги для бизнеса — УЦ Свободный Сокол</title>
+        <meta name="description" content="Юридическое сопровождение бизнеса в Липецке: корпоративное право, договорная работа, судебное представительство, сопровождение сделок" />
+      </Helmet>
+      <ServicePageTemplate
+        directionNumber="03"
+        directionIcon={Scale}
+        title={
+          <>
+            Юридические услуги <br />
+            для бизнеса
+          </>
+        }
+        description="Оказываем весь спектр юридических услуг: от регистрации компании и договорной работы до представительства в судах и сопровождения сложных сделок."
+        heroImage={`${import.meta.env.BASE_URL}images/accounting-card.jpg`}
+        ctaButtonText="Связаться с юристом"
+        services={services}
+        ctaTitle="Нужна юридическая помощь?"
+        ctaDescription="Запишитесь на консультацию к нашим экспертам. Мы проанализируем вашу ситуацию и предложим оптимальное решение."
+        ctaButtonLabel="Получить консультацию"
+      />
+    </>
   );
 }

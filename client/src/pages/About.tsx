@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Building, ZoomIn } from "lucide-react";
 import { Link } from "wouter";
+import { Helmet } from "react-helmet-async";
 
 export default function About() {
   const certificates = [
@@ -13,6 +14,10 @@ export default function About() {
 
   return (
     <Layout>
+      <Helmet>
+        <title>О компании — УЦ Свободный Сокол</title>
+        <meta name="description" content="УЦ Свободный Сокол — надежный партнёр для бизнеса в Липецке. История компании, наша команда и сертификаты качества" />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative py-24 bg-sidebar text-white overflow-hidden">
         <div className="absolute inset-0 z-0">

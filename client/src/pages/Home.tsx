@@ -12,10 +12,15 @@ import {
   Clock,
 } from "lucide-react";
 import { Link } from "wouter";
+import { Helmet } from "react-helmet-async";
 
 export default function Home() {
   return (
     <Layout>
+      <Helmet>
+        <title>УЦ Свободный Сокол — Бухгалтерия, Лаборатория, Юридические услуги в Липецке</title>
+        <meta name="description" content="Комплексное сопровождение бизнеса: бухгалтерские услуги для ИП и ООО, заводская лаборатория и юридическая поддержка в Липецке" />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-sidebar text-white">
         {/* Background Image with Overlay */}

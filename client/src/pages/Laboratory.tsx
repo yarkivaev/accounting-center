@@ -13,6 +13,7 @@ import {
   ZoomIn,
 } from "lucide-react";
 import { useSearch } from "wouter";
+import { Helmet } from "react-helmet-async";
 
 export default function Laboratory() {
   const search = useSearch();
@@ -191,24 +192,30 @@ export default function Laboratory() {
   ];
 
   return (
-    <ServicePageTemplate
-      directionNumber="02"
-      directionIcon={FlaskConical}
-      title={
-        <>
-          Центральная <br />
-          Заводская Лаборатория
-        </>
-      }
-      description="Высокоточные испытания материалов и контроль качества с использованием современного оборудования и многолетнего промышленного опыта."
-      heroImage={`${import.meta.env.BASE_URL}images/lab-card.jpg`}
-      ctaButtonText="Связаться с лабораторией"
-      services={labGroups}
-      tabs={tabs}
-      defaultTab={tab || undefined}
-      ctaTitle="Необходимы лабораторные испытания?"
-      ctaDescription="Свяжитесь с нами для обсуждения программы испытаний и получения коммерческого предложения."
-      ctaButtonLabel="Перейти к контактам"
-    />
+    <>
+      <Helmet>
+        <title>Центральная заводская лаборатория — УЦ Свободный Сокол</title>
+        <meta name="description" content="Лабораторные испытания в Липецке: химический анализ металлов, механические испытания, контроль воды, неразрушающий контроль материалов" />
+      </Helmet>
+      <ServicePageTemplate
+        directionNumber="02"
+        directionIcon={FlaskConical}
+        title={
+          <>
+            Центральная <br />
+            Заводская Лаборатория
+          </>
+        }
+        description="Высокоточные испытания материалов и контроль качества с использованием современного оборудования и многолетнего промышленного опыта."
+        heroImage={`${import.meta.env.BASE_URL}images/lab-card.jpg`}
+        ctaButtonText="Связаться с лабораторией"
+        services={labGroups}
+        tabs={tabs}
+        defaultTab={tab || undefined}
+        ctaTitle="Необходимы лабораторные испытания?"
+        ctaDescription="Свяжитесь с нами для обсуждения программы испытаний и получения коммерческого предложения."
+        ctaButtonLabel="Перейти к контактам"
+      />
+    </>
   );
 }

@@ -1,10 +1,15 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 export default function Contacts() {
   return (
     <Layout>
+      <Helmet>
+        <title>Контакты — УЦ Свободный Сокол</title>
+        <meta name="description" content="Контактная информация УЦ Свободный Сокол: адрес в Липецке, телефон, email, режим работы и реквизиты компании" />
+      </Helmet>
       {/* Hero Section */}
       <section className="bg-sidebar text-white py-20">
         <div className="container">
