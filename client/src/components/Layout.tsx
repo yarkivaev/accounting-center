@@ -63,9 +63,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "text-sm font-medium hover:text-primary",
+                  "text-sm font-medium hover:text-primary transition-colors",
                   location === link.href
-                    ? "text-primary"
+                    ? "text-primary font-bold border-b-2 border-primary"
                     : "text-muted-foreground"
                 )}
               >
