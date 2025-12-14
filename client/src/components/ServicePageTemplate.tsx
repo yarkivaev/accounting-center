@@ -177,8 +177,7 @@ export default function ServicePageTemplate({
           {tabs && tabs.length > 0 ? (
             <Tabs defaultValue={defaultTab || tabs[0].id} className="w-full">
               <div className="flex justify-center mb-12">
-                <TabsList
-                  className={`grid w-full max-w-2xl h-14 bg-secondary/50 p-1 rounded-none`}
+                <TabsList className="flex flex-col md:grid w-full max-w-2xl h-auto md:h-14 bg-secondary/50 p-1 rounded-none gap-1 md:gap-0"
                   style={{
                     gridTemplateColumns: `repeat(${tabs.length}, minmax(0, 1fr))`,
                   }}
@@ -187,7 +186,7 @@ export default function ServicePageTemplate({
                     <TabsTrigger
                       key={tab.id}
                       value={tab.id}
-                      className="h-full text-base font-bold uppercase tracking-wide data-[state=active]:bg-primary data-[state=active]:text-white rounded-none transition-all"
+                      className="h-12 md:h-full text-base font-bold uppercase tracking-wide data-[state=active]:bg-primary data-[state=active]:text-white rounded-none transition-all"
                     >
                       {tab.label}
                     </TabsTrigger>
