@@ -160,7 +160,7 @@ export default function Home() {
                 <div className="relative h-64 overflow-hidden">
                   <div className="absolute inset-0 bg-sidebar/10 group-hover:bg-transparent transition-colors z-10" />
                   <img
-                    src={`${import.meta.env.BASE_URL}images/accounting-card.jpg`}
+                    src={`${import.meta.env.BASE_URL}images/legal-card.jpg`}
                     alt="Юридические услуги"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
