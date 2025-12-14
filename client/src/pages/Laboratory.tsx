@@ -20,9 +20,20 @@ export default function Laboratory() {
   const params = new URLSearchParams(search);
   const tab = params.get("tab");
   const equipment = [
-    { src: "equipment-1.jpg", title: "Спектрометр" },
-    { src: "equipment-2.png", title: "Химическая лаборатория" },
     { src: "equipment-3.jpg", title: "Лабораторное оборудование" },
+    { src: "equipment-2.png", title: "Химическая лаборатория" },
+    { src: "equipment-1.jpg", title: "Спектрометр" },
+    { src: "IMG_7041.JPG" },
+    { src: "IMG_7046.JPG" },
+    { src: "IMG_7056.JPG" },
+    { src: "IMG_7061.JPG" },
+    { src: "IMG_7065.JPG" },
+    { src: "IMG_7069.JPG" },
+    { src: "IMG_7070.JPG" },
+    { src: "IMG_7075.JPG" },
+    { src: "IMG_7079.JPG" },
+    { src: "IMG_7084.JPG" },
+    { src: "IMG_7085.JPG" },
   ];
 
   const labGroups: ServiceGroup[] = [
@@ -158,8 +169,8 @@ export default function Laboratory() {
                 <DialogTrigger asChild>
                   <div className="relative aspect-[4/3] bg-white border border-border overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
                     <img
-                      src={`${import.meta.env.BASE_URL}images/${item.src}`}
-                      alt={item.title}
+                      src={`${import.meta.env.BASE_URL}images/equipment/${item.src}`}
+                      alt={item.title || "Лабораторное оборудование"}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-sidebar/0 group-hover:bg-sidebar/20 transition-colors duration-300 flex items-center justify-center">
@@ -167,18 +178,20 @@ export default function Laboratory() {
                         <ZoomIn className="h-6 w-6 text-primary" />
                       </div>
                     </div>
-                    <div className="absolute bottom-0 left-0 right-0 bg-white/95 p-4 border-t border-border">
-                      <p className="text-sm font-bold text-sidebar line-clamp-2">
-                        {item.title}
-                      </p>
-                    </div>
+                    {item.title && (
+                      <div className="absolute bottom-0 left-0 right-0 bg-white/95 p-4 border-t border-border">
+                        <p className="text-sm font-bold text-sidebar line-clamp-2">
+                          {item.title}
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </DialogTrigger>
                 <DialogContent className="max-w-4xl p-0 overflow-hidden bg-transparent border-none shadow-none">
                   <div className="relative w-full h-[80vh] bg-white rounded-lg overflow-auto p-4 flex items-center justify-center">
                     <img
-                      src={`${import.meta.env.BASE_URL}images/${item.src}`}
-                      alt={item.title}
+                      src={`${import.meta.env.BASE_URL}images/equipment/${item.src}`}
+                      alt={item.title || "Лабораторное оборудование"}
                       className="max-w-full max-h-full object-contain"
                     />
                   </div>
