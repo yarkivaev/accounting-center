@@ -94,6 +94,56 @@ export default function Contacts() {
                 </div>
               </div>
 
+              <div className="space-y-6">
+                <h3 className="text-xl font-bold text-sidebar border-b border-border pb-4">
+                  Руководители направлений
+                </h3>
+
+                <div className="space-y-6">
+                  <div className="space-y-2">
+                    <p className="text-base font-bold text-sidebar">
+                      Елена Попова
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Начальник лаборатории ООО «УЦ «Свободный сокол»
+                    </p>
+                    <a
+                      href="tel:+79508073519"
+                      className="block text-base font-medium text-sidebar hover:text-primary transition-colors"
+                    >
+                      +7 950 807-35-19
+                    </a>
+                    <a
+                      href="mailto:popova_ev@svsokol.ru"
+                      className="block text-sm text-primary hover:underline"
+                    >
+                      popova_ev@svsokol.ru
+                    </a>
+                  </div>
+
+                  <div className="space-y-2">
+                    <p className="text-base font-bold text-sidebar">
+                      Анастасия Ларина
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Заместитель генерального директора по правовым вопросам
+                    </p>
+                    <a
+                      href="tel:+79508032071"
+                      className="block text-base font-medium text-sidebar hover:text-primary transition-colors"
+                    >
+                      +7 950 803-20-71
+                    </a>
+                    <a
+                      href="mailto:panarina_ae@svsokol.ru"
+                      className="block text-sm text-primary hover:underline"
+                    >
+                      panarina_ae@svsokol.ru
+                    </a>
+                  </div>
+                </div>
+              </div>
+
               {/* Map Placeholder */}
               <div className="h-[400px] bg-secondary w-full relative border border-border">
                 <iframe
