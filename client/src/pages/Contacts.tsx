@@ -8,7 +8,10 @@ export default function Contacts() {
     <Layout>
       <Helmet>
         <title>Контакты — УЦ Свободный Сокол</title>
-        <meta name="description" content="Контактная информация УЦ Свободный Сокол: адрес в Липецке, телефон, email, режим работы и реквизиты компании" />
+        <meta
+          name="description"
+          content="Контактная информация УЦ Свободный Сокол: адрес в Липецке, телефон, email, режим работы и реквизиты компании"
+        />
       </Helmet>
       {/* Hero Section */}
       <section className="bg-sidebar text-white py-20">
@@ -35,7 +38,7 @@ export default function Contacts() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 text-primary font-bold uppercase tracking-wider text-sm">
                     <MapPin className="h-5 w-5" />
-                    Почтовый адрес
+                    Почтовый/фактический адрес
                   </div>
                   <p className="text-lg text-sidebar font-medium">
                     398007, г. Липецк,
@@ -147,7 +150,7 @@ export default function Contacts() {
               {/* Map Placeholder */}
               <div className="h-[400px] bg-secondary w-full relative border border-border">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2423.66687654321!2d39.646666!3d52.596666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDM1JzQ4LjAiTiAzOcKwMzgnNDguMCJF!5e0!3m2!1sen!2sru!4v1620000000000!5m2!1sen!2sru"
+                  src="https://yandex.ru/map-widget/v1/?ll=39.658154,52.631802&z=17&pt=39.658154,52.631802,pm2rdm"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
