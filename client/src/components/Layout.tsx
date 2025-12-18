@@ -43,7 +43,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <header className="sticky top-0 z-50 w-full border-b bg-background py-3 shadow-sm">
         <div className="container flex h-14 items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
-            <img src="/accounting-center/favicon.png" alt="Свободный Сокол" className="h-8 w-8" />
+            <img
+              src="/accounting-center/favicon.png"
+              alt="Свободный Сокол"
+              className="h-8 w-8"
+            />
             <div className="flex flex-col leading-none">
               <span className="font-bold text-lg tracking-tight">
                 СВОБОДНЫЙ СОКОЛ
@@ -129,7 +133,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             <div className="space-y-4">
               <div className="flex items-center gap-2">
-                <img src="/accounting-center/favicon.png" alt="Свободный Сокол" className="h-8 w-8" />
+                <img
+                  src="/accounting-center/favicon.png"
+                  alt="Свободный Сокол"
+                  className="h-8 w-8"
+                />
                 <div className="flex flex-col leading-none">
                   <span className="font-bold text-lg tracking-tight text-white">
                     СВОБОДНЫЙ СОКОЛ

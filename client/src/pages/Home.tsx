@@ -18,8 +18,14 @@ export default function Home() {
   return (
     <Layout>
       <Helmet>
-        <title>УЦ Свободный Сокол — Бухгалтерия, Лаборатория, Юридические услуги в Липецке</title>
-        <meta name="description" content="Комплексное сопровождение бизнеса: бухгалтерские услуги для ИП и ООО, заводская лаборатория и юридическая поддержка в Липецке" />
+        <title>
+          УЦ Свободный Сокол — Бухгалтерия, Лаборатория, Юридические услуги в
+          Липецке
+        </title>
+        <meta
+          name="description"
+          content="Комплексное сопровождение бизнеса: бухгалтерские услуги для ИП и ООО, заводская лаборатория и юридическая поддержка в Липецке"
+        />
       </Helmet>
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-sidebar text-white">
@@ -351,10 +357,7 @@ export default function Home() {
                 desc: "Ультразвуковой контроль с выездом на объект",
               },
             ].map((item, i) => (
-              <div
-                key={i}
-                className="bg-sidebar p-8 border border-transparent"
-              >
+              <div key={i} className="bg-sidebar p-8 border border-transparent">
                 <div className="text-primary-foreground/20 text-4xl font-mono font-bold mb-4">
                   0{i + 1}
                 </div>

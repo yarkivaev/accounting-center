@@ -16,7 +16,10 @@ export default function About() {
     <Layout>
       <Helmet>
         <title>О компании — УЦ Свободный Сокол</title>
-        <meta name="description" content="УЦ Свободный Сокол — надежный партнёр для бизнеса в Липецке. История компании, наша команда и сертификаты качества" />
+        <meta
+          name="description"
+          content="УЦ Свободный Сокол — надежный партнёр для бизнеса в Липецке. История компании, наша команда и сертификаты качества"
+        />
       </Helmet>
       {/* Hero Section */}
       <section className="relative py-24 bg-sidebar text-white overflow-hidden">

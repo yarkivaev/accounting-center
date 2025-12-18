@@ -177,7 +177,8 @@ export default function ServicePageTemplate({
           {tabs && tabs.length > 0 ? (
             <Tabs defaultValue={defaultTab || tabs[0].id} className="w-full">
               <div className="flex justify-center mb-12">
-                <TabsList className="flex flex-col md:grid w-full max-w-2xl h-auto md:h-14 bg-secondary/50 p-1 rounded-none gap-1 md:gap-0"
+                <TabsList
+                  className="flex flex-col md:grid w-full max-w-2xl h-auto md:h-14 bg-secondary/50 p-1 rounded-none gap-1 md:gap-0"
                   style={{
                     gridTemplateColumns: `repeat(${tabs.length}, minmax(0, 1fr))`,
                   }}

@@ -79,7 +79,10 @@ export default function Accounting() {
     <>
       <Helmet>
         <title>Бухгалтерские услуги для ИП и ООО — УЦ Свободный Сокол</title>
-        <meta name="description" content="Бухгалтерское сопровождение бизнеса в Липецке: регистрация ИП и ООО, ведение учёта, налоговая отчётность, кадровый учёт" />
+        <meta
+          name="description"
+          content="Бухгалтерское сопровождение бизнеса в Липецке: регистрация ИП и ООО, ведение учёта, налоговая отчётность, кадровый учёт"
+        />
       </Helmet>
       <ServicePageTemplate
         directionNumber="01"
