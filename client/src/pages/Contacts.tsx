@@ -82,15 +82,21 @@ export default function Contacts() {
                 </h3>
 
                 <div className="space-y-2">
+                  <p className="text-base font-bold text-sidebar">
+                    Людмила Пошевалова
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Генеральный директор ООО «УЦ «Свободный сокол»
+                  </p>
                   <a
                     href="tel:+79205292360"
-                    className="block text-lg font-bold text-sidebar hover:text-primary transition-colors"
+                    className="block text-base font-medium text-sidebar hover:text-primary transition-colors"
                   >
                     +7 920 529-23-60
                   </a>
                   <a
                     href="mailto:poshevalova_la@svsokol.ru"
-                    className="block text-base text-primary hover:underline"
+                    className="block text-sm text-primary hover:underline"
                   >
                     poshevalova_la@svsokol.ru
                   </a>
